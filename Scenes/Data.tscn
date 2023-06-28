@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqik3dt8mmk1w"]
+
+[ext_resource type="FontFile" uid="uid://ob31o372rhax" path="res://Font/rainyhearts/rainyhearts.ttf" id="1_a00al"]
+[ext_resource type="Script" path="res://Scripts/Horas.gd" id="1_rgd44"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.920667, 0.83, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.172549, 0.0470588, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_a00al")
+theme_override_font_sizes/font_size = 32
+text = "sadsadsad"
+script = ExtResource("1_rgd44")

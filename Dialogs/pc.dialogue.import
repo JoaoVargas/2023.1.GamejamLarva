@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://m6qil28pbfxt"
+path="res://.godot/imported/pc.dialogue-daa0c321c3c9b588c3ee72f0af33db88.tres"
+
+[deps]
+
+source_file="res://Dialogs/pc.dialogue"
+dest_files=["res://.godot/imported/pc.dialogue-daa0c321c3c9b588c3ee72f0af33db88.tres"]
+
+[params]
+
+defaults=true

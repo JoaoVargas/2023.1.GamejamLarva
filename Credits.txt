@@ -1,1 +1,4 @@
 Font: Rainy Hearts - Camellina | https://www.dafont.com/rainyhearts.font
+Assets: Modern interiors - RPG Tileset - LimeZu | https://limezu.itch.io/moderninteriors
+Assets: Pixel Keyboard Keys - Dream Mix | https://dreammix.itch.io/keyboard-keys-for-ui
+Plugins: Dialog Manager - nathanhoad | https://github.com/nathanhoad/godot_dialogue_manager

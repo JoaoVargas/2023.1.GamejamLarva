@@ -1,0 +1,65 @@
+~ main
+set Global.in_dialogue = true
+set Global.max_speed = 0
+
+if Global.has_classes:
+	if (Global.hora + (Global.materias * 2)) >= 24:
+		if Global.hora + 2 >= 24:
+			Você: Ja esta muito tarde....
+		else:
+			Você: Não da mais tempo de assistir a aula, o que devo fazer?
+			- Hmmmm, nada.
+			- Biblioteca Universitária.
+				set Global.hora += 2
+				set Global.saude_mental -= 15
+				set Global.social -= 5
+				set Global.desempenho_academico += 5
+			- Café Marquês.
+				set Global.hora += 2
+				set Global.saude_mental += 5
+				set Global.social += 10
+				set Global.desempenho_academico -= 5
+	else:
+		if (Global.hora + 2) >= 24:
+			Você: Ja esta muito tarde....
+		else:
+			Você: Ainda tenho que ir assistir a aula, o que devo fazer?
+			- Hmmmm, nada.
+			- Biblioteca Universitária.
+				set Global.hora += 2
+				set Global.saude_mental -= 5
+				set Global.social -= 5
+				set Global.desempenho_academico += 10
+			- Café Marquês.
+				set Global.hora += 2
+				set Global.saude_mental += 5
+				set Global.social += 10
+				set Global.desempenho_academico -= 5
+			- Ir para aula.
+				set Global.hora += 2 * Global.materias
+				set Global.saude_mental -= 2 * Global.materias
+				set Global.social -= 2 / Global.materias
+				set Global.desempenho_academico += 2 * Global.materias
+				set Global.has_classes = false
+else:
+	if Global.hora + 2 >= 24:
+		Você: Ja esta muito tarde....
+	else:
+		Você: Não tenho mais aula hoje, o que devo fazer?
+		- Hmmmm, nada.
+		- Biblioteca Universitária.
+			set Global.hora += 2
+			set Global.saude_mental -= 15
+			set Global.social -= 5
+			set Global.desempenho_academico += 5
+		- Café Marquês.
+			set Global.hora += 2
+			set Global.saude_mental += 5
+			set Global.social += 10
+			set Global.desempenho_academico -= 5
+	
+
+set Global.in_dialogue = false
+set Global.max_speed = 60
+do Global.checkup()
+=> END

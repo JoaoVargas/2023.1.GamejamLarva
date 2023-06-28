@@ -1,0 +1,34 @@
+~ main
+set Global.in_dialogue = true
+set Global.max_speed = 0
+
+if Global.hora < 21:
+	Você: Cama quentinha, o que devo fazer?
+	- hmmmmmm, nada.
+	- Passar um tempo aproveitando a vida
+		set Global.hora += 1
+		set Global.social -= 5
+		set Global.saude_mental += 5
+elif Global.hora < 23:
+	Você: Cama quentinha, o que devo fazer?
+	- hmmmmmm, nada.
+	- Passar um tempo aproveitando a vida
+		set Global.hora += 1
+		set Global.social -= 5
+		set Global.saude_mental += 5
+	- Ir dormir.
+		set Global.desempenho_academico -= 5
+		do Global.end_day()
+elif Global.hora < 24:
+	Você: Cama quentinha, o que devo fazer?
+	- hmmmmmm, nada.
+	- Ir dormir.
+		set Global.desempenho_academico -= 5
+		do Global.end_day()
+		
+	
+
+set Global.in_dialogue = false
+set Global.max_speed = 60
+do Global.checkup()
+=> END

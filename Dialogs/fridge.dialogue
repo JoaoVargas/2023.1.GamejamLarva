@@ -1,0 +1,73 @@
+~ main
+set Global.in_dialogue = true
+set Global.max_speed = 0
+
+if Global.hora < 11:
+	if !Global.cafe_da_manha:
+		Você: O que eu quero para tomar café?
+		- Hmmmm, nada.
+		- Um copo d'água.
+			set Global.hora += 1
+			set Global.cafe_da_manha = true
+		- Pão com geléia.
+			set Global.hora += 1
+			set Global.saude_fisica += 5
+			set Global.cafe_da_manha = true
+		- Chineque com doce de leite e lanche pra tarde.
+			set Global.hora += 2
+			set Global.saude_fisica += 15
+			set Global.has_eaten = true
+			set Global.cafe_da_manha = true
+	else:
+		Você: Acho que estou cheio já.
+elif Global.hora < 19:
+	if !Global.almoco:
+		Você: O que eu quero para almoçar?
+		- Hmmmm, nada.
+		- Miojo.
+			set Global.hora += 1
+			set Global.saude_fisica -= 10
+			set Global.has_eaten = true
+			set Global.almoco = true
+		- Arroz com feijão.
+			set Global.hora += 2
+			set Global.saude_fisica += 10
+			set Global.has_eaten = true
+			set Global.almoco = true
+	else:
+		Você: Acho que estou cheio já.
+elif Global.hora < 23:
+	if !Global.jantar:
+		Você: O que eu quero para jantar?
+		- Hmmmm, nada.
+		- Cup-Noodles e ovo frito.
+			set Global.hora += 1
+			set Global.saude_fisica -= 10
+			set Global.has_eaten = true
+			set Global.jantar = true
+		- Macarrão alho e óleo com frango a milanesa.
+			set Global.hora += 2
+			set Global.saude_fisica += 10
+			set Global.has_eaten = true
+			set Global.jantar = true
+	else:
+		Você: Acho que estou cheio já.
+elif Global.hora < 24:
+	if !Global.jantar:
+		Você: O que eu quero para jantar?
+		- Hmmmm, nada.
+		- Cup-Noodles e ovo frito.
+			set Global.hora += 1
+			set Global.saude_fisica -= 10
+			set Global.has_eaten = true
+			set Global.jantar = true
+	else:
+		Você: Acho que estou cheio já.
+else:
+	Você: Estou muito cansado para comer...
+
+
+set Global.in_dialogue = false
+set Global.max_speed = 60
+do Global.checkup()
+=> END

@@ -1,0 +1,12 @@
+~ main
+set Global.in_dialogue = true
+set Global.max_speed = 0
+
+Teste: Blabla...
+- Sim
+- Não
+
+set Global.in_dialogue = false
+set Global.max_speed = 60
+do Global.checkup()
+=> END

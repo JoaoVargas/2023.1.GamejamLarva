@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhylqyd22lx3x"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_qx56f"]
+[ext_resource type="FontFile" uid="uid://cwv82v2bl6ux0" path="res://Font/rainyhearts/new_font_file.tres" id="2_eugss"]
+[ext_resource type="Theme" uid="uid://builqwf7qs1ao" path="res://Font/new_theme.tres" id="3_txk76"]
+[ext_resource type="FontFile" uid="uid://ob31o372rhax" path="res://Font/rainyhearts/rainyhearts.ttf" id="3_udg2c"]
+[ext_resource type="Texture2D" uid="uid://j3q46ffvcxb6" path="res://Assets/GUI/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Spritesheets/UI_Flat_Button_Medium_Press_02a1.png" id="4_5a45s"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qx56f")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 216.0
+scale = Vector2(3, 3)
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2"]
+z_index = -2
+layout_mode = 2
+color = Color(0.94902, 0.854902, 0.733333, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 216.0
+scale = Vector2(3, 3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.920667, 0.83, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_outline_color = Color(0, 0.109804, 0.25098, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_eugss")
+theme_override_font_sizes/font_size = 48
+text = "Faculdade 
+Simulator"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jogar" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_txk76")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_udg2c")
+text = "Jogar"
+icon = ExtResource("4_5a45s")
+flat = true
+icon_alignment = 1
+
+[node name="Sair" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_txk76")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.14, 0.14, 0.14, 1)
+theme_override_fonts/font = ExtResource("3_udg2c")
+text = "Sair"
+icon = ExtResource("4_5a45s")
+flat = true
+clip_text = true
+icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
